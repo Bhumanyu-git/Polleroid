@@ -1,0 +1,25 @@
+#Header {
+    background-color: royalblue;
+    margin-bottom: 0%;
+}
+.about {
+    background-color: aquamarine;
+}
+#start:hover {
+    background-color: royalblue;
+    color: white;
+    border-radius: 5px;
+}
+th, td {
+    border: 2px solid black;
+    padding: 5px;
+}
+#result {
+    border-collapse: collapse;
+    margin-top: 2px;
+}
+body {
+    background-image: url("background.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
