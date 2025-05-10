@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <title>Polleroid</title>
+    <style>
+        #Header {
+    background-color: royalblue;
+    margin-bottom: 0%;
+}
+.about {
+    background-color: aquamarine;
+}
+#start:hover {
+    background-color: royalblue;
+    color: white;
+    border-radius: 5px;
+}
+th, td {
+    border: 2px solid black;
+    padding: 5px;
+}
+#result {
+    border-collapse: collapse;
+    margin-top: 2px;
+}
+body {
+    background-image: url("background.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+    </style>
+</head>
+<body>
+    <h1 id = "Header">Welcome to Polleroid!</h1>
+    <div class = "about">
+        <p>
+            Polleroid is a sleek, user-friendly web app designed to make creating polls effortless. Whether you're gathering opinions for a class project or
+            making group decisions with friends, Polleroid offers a clean interface and real-time results tracking. Users can create customized polls with multiple
+            question types and view live analytics as responses come in. Built with privacy and simplicity in mind, Polleroid is your go-to tool for fast,
+            interactive polling that keeps engagement high and results clear.
+        </p>
+    </div>
+    <a href = "#" onclick = "conduct_poll()"><button id = "start">Conduct a poll</button></a>
+    <div>
+        <table id = "result"></table>
+    </div>
+    <script>
+        function conduct_poll() {
+    let candidates = []
+    no_candidates = prompt("No. of candidates: ")
+    no_candidates = Number.parseInt(no_candidates)
+    for(let i = no_candidates; i > 0; i--) {
+        c = prompt(`Candidate ${i}: `)
+        candidates.push(c)
+    }
+    let voters = prompt("No. of voters: ")
+    if(candidates.length > 0) {
+        for(i = Number.parseInt(voters); i > 0; i--) {
+            let name = prompt("Name: ")
+            let vote = prompt("Vote: ")
+            confirm(`Mr./Mrs. ${name}, do you want to give your vote to ${vote}?`)
+            let result = document.getElementById("result")
+            let row = result.insertRow(0)
+            let cell_name = row.insertCell(0)
+            let cell_vote = row.insertCell(1)
+            cell_name.innerHTML = name
+            cell_vote.innerHTML = vote
+        }
+    }
+    else {
+        alert("No candidates found!")
+    }
+}
+    </script>
+</body>
+</html>
